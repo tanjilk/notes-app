@@ -2,7 +2,7 @@
 
 const chalk = require('chalk');
 const yargs = require('yargs');
-const getNotes = require('./notes.js');
+const notes = require('./notes.js');
 
 // Create the add command
 yargs.command({
@@ -30,9 +30,7 @@ yargs.command({
         }
     },
     handler : function(argv){
-        console.log(chalk.yellow('Informations about the note...'));
-        console.log('Title: ' + argv.title);
-        console.log('Body: ' + argv.body);
+        notes.addNote(argv.title, argv.body);
     }
 })
 
